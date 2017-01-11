@@ -1,4 +1,4 @@
-[![](https://images.microbadger.com/badges/version/centular/polymer-cli.svg)](http://microbadger.com/images/centular/polymer-cli "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/centular/polymer-cli.svg)](http://microbadger.com/images/centular/polymer-cli "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/centular/docker-polymer-cli.svg)](http://microbadger.com/images/centular/polymer-cli "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/centular/docker-polymer-cli.svg)](http://microbadger.com/images/centular/docker-polymer-cli "Get your own image badge on microbadger.com")
 
 ## centular/docker-polymer-cli
 
