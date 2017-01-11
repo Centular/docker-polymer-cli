@@ -1,6 +1,6 @@
 [![](https://images.microbadger.com/badges/version/centular/polymer-cli.svg)](http://microbadger.com/images/centular/polymer-cli "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/centular/polymer-cli.svg)](http://microbadger.com/images/centular/polymer-cli "Get your own image badge on microbadger.com")
 
-## centular/polymer-cli
+## centular/docker-polymer-cli
 
 *Forked from jefferyb/docker-polymer-cli*
 
@@ -13,7 +13,7 @@ __What's new:__
 
 ## Supported tags
 
--	[`latest` (*Dockerfile*)](https://github.com/centular/polymer-cli/blob/master/Dockerfile)
+-	[`latest` (*Dockerfile*)](https://github.com/centular/docker-polymer-cli/blob/master/Dockerfile)
 
 ## Build an app with App Toolbox
 
@@ -29,11 +29,11 @@ Using the [Polymer Project Documentation](https://www.polymer-project.org/1.0/st
 
 	2. Initialize your project with an app template
 
-		$ docker run --rm -v $(pwd):/home/polymer/app centular/polymer-cli polymer init starter-kit
+		$ docker run --rm -v $(pwd):/home/polymer/app centular/docker-polymer-cli polymer init starter-kit
 
 	3. Serve your project
 
-		$ docker run --name polymer-project -d -p 8080:8080 -v $(pwd):/home/polymer/app centular/polymer-cli polymer serve -H 0.0.0.0
+		$ docker run --name polymer-project -d -p 8080:8080 -v $(pwd):/home/polymer/app centular/docker-polymer-cli polymer serve -H 0.0.0.0
 
 		and just point your browser to port 8080
 
@@ -46,7 +46,7 @@ Using the [Polymer Project Documentation](https://www.polymer-project.org/1.0/st
 Go to your Polymer project folder, then execute:
 
 ```console
-docker run --name polymer-project -d -p 8080:8080 -v $(pwd):/home/polymer/app centular/polymer-cli polymer serve -H 0.0.0.0
+docker run --name polymer-project -d -p 8080:8080 -v $(pwd):/home/polymer/app centular/docker-polymer-cli polymer serve -H 0.0.0.0
 ```
 
 Once it's up and running, just point your browser to port 8080...
@@ -56,7 +56,7 @@ Once it's up and running, just point your browser to port 8080...
 Since the `docker run` command is long, and if you're going to be using it often, I would suggest creating/adding an alias for it in your .bash_profile or .bashrc, like:
 
 ```console
-alias polymer="docker run --name polymer-project --rm -p 8080:8080 -v $(pwd):/home/polymer/app centular/polymer-cli polymer "
+alias polymer="docker run --name polymer-project --rm -p 8080:8080 -v $(pwd):/home/polymer/app centular/docker-polymer-cli polymer "
 ```
 
 and then you can just use `polymer` along with the [Polymer CLI commands](https://github.com/Polymer/polymer-cli), like:
@@ -94,11 +94,11 @@ This image includes:
 
 And you can make alias for them too to work with your project with something like:
 ```console
-alias git-docker="docker run --rm -v $(pwd):/home/polymer/app centular/polymer-cli git "
-alias npm-docker="docker run --rm -v $(pwd):/home/polymer/app centular/polymer-cli npm "
-alias node-docker="docker run --rm -v $(pwd):/home/polymer/app centular/polymer-cli node "
-alias bower-docker="docker run --rm -v $(pwd):/home/polymer/app centular/polymer-cli bower "
-alias gulp-docker="docker run --rm -v $(pwd):/home/polymer/app -p 5000:5000 centular/polymer-cli gulp "
+alias git-docker="docker run --rm -v $(pwd):/home/polymer/app centular/docker-polymer-cli git "
+alias npm-docker="docker run --rm -v $(pwd):/home/polymer/app centular/docker-polymer-cli npm "
+alias node-docker="docker run --rm -v $(pwd):/home/polymer/app centular/docker-polymer-cli node "
+alias bower-docker="docker run --rm -v $(pwd):/home/polymer/app centular/docker-polymer-cli bower "
+alias gulp-docker="docker run --rm -v $(pwd):/home/polymer/app -p 5000:5000 centular/docker-polymer-cli gulp "
 ```
 and then, for example, you can use:
 
