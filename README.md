@@ -56,7 +56,7 @@ Once it's up and running, just point your browser to port 8080...
 Since the `docker run` command is long, and if you're going to be using it often, I would suggest creating/adding an alias for it in your .bash_profile or .bashrc, like:
 
 ```console
-alias polymer="docker run --name polymer-project --rm -p 8080:8080 -v $(pwd):/home/polymer/app centular/docker-polymer-cli polymer "
+alias polymer="docker run --name polymer-project --rm -it -p 8080:8080 -v $(pwd):/home/polymer/app centular/docker-polymer-cli polymer "
 ```
 
 and then you can just use `polymer` along with the [Polymer CLI commands](https://github.com/Polymer/polymer-cli), like:
