@@ -1,0 +1,38 @@
+gerrit-mysql:
+  container_name: gerrit-mysql
+  restart: always
+  image: mysql:5.6.25
+  environment:
+    MYSQL_ROOT_PASSWORD: aN@%Q6X9KYGnR{4,
+    MYSQL_USER: gerrit
+    MYSQL_PASSWORD: 3P)yp5dMhgvtv#Q-
+    MYSQL_DATABASE: gerrit
+
+
+#Start gerrit docker ( AUTH_TYPE=HTTP_LDAP is also supported )
+gerrit:
+  container_name: gerrit
+  restart: always
+  image: openfrontier/gerrit
+  link:
+    - gerrit-mysql
+  expose:
+    - "8080"
+    - "29418"
+  environment:
+    - "GERRIT_INIT_ARGS='--install-plugin=download-commands --install-plugin=download-commands --install-plugin=gerrit-oauth-provider'"
+    - "REPO_PATH=/var/git/repos"
+    - "WEBURL=http://mercury.ordercloud.com:8088/"
+    - "DATABASE_TYPE=mysql"
+    - "DB_HOSTNAME=gerrit-mysql"
+    - "DB_PORT=3306"
+    - "DB_NAME=gerrit"
+    - "DB_USER=gerrit"
+    - "DB_PASSWORD=3P)yp5dMhgvtv#Q-"
+    - "GERRIT_PASSWORD=${PASSWORD_GERRIT}"
+    - "JENKINS_PASSWORD=${PASSWORD_JENKINS}"
+    - "INITIAL_ADMIN_USER=admin"
+    - "INITIAL_ADMIN_PASSWORD=secret"
+    - "USER_NAME=gerrit"
+    - "USER_EMAIL=gerrit@ordercloud.com"
+    - "DOWNLOAD_SCHEME=http"
