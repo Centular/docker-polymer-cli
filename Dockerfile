@@ -16,10 +16,12 @@ MAINTAINER Wessel Pieterse <wessel@ordercloud.com>
 
 ENV POLYMER_CLI_HOME /home/polymer
 ENV user=polymer
+ENV uid=1000
 ENV group=polymer
+ENV gid=1000
 
-RUN groupadd --gid 1000 ${user} \
-  && useradd --uid 1000 --gid ${group} --shell /bin/bash --create-home ${user}
+RUN groupadd --gid ${gid} ${user} \
+  && useradd --uid ${uid} --gid ${group} --shell /bin/bash --create-home ${user}
 
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
