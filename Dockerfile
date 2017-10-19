@@ -48,5 +48,4 @@ VOLUME /home/${user}/app
 
 WORKDIR /home/${user}/app
 
-
-CMD bash
+CMD ["bash"]
